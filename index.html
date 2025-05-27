@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinais de Vida - Tradutor para Libras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-hands"></i>
+            <h1>Sinais de <span>Vida</span></h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#translator" class="nav-link">Tradutor</a></li>
+                <li><a href="#learn" class="nav-link">Aprender</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Conectando mundos através da Libras</h2>
+            <p class="hero-text">Sinais de Vida é uma plataforma inovadora que traduz conteúdo em português para Língua Brasileira de Sinais, promovendo inclusão e acessibilidade.</p>
+            <a href="#translator" class="btn btn-primary">Experimente agora</a>
+        </div>
+        <div class="hero-image">
+            <!--<img src="assets/images/hero-image.png" alt="Pessoas se comunicando em Libras">-->
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section id="translator" class="translator-section">
+            <h2 class="section-title">Tradutor para Libras</h2>
+            <p class="section-subtitle">Digite ou fale o texto que deseja traduzir para Libras</p>
+            
+            <div class="translator-container">
+                <div class="input-area">
+                    <textarea id="text-to-translate" placeholder="Digite aqui o texto que deseja traduzir para Libras..." class="translation-input"></textarea>
+                    <div class="controls">
+                        <button id="translate-btn" class="btn btn-translate">
+                            <i class="fas fa-hands"></i> Traduzir
+                        </button>
+                        <button id="voice-btn" class="btn btn-voice">
+                            <i class="fas fa-microphone"></i> Falar
+                        </button>
+                        <button id="clear-btn" class="btn btn-clear">
+                            <i class="fas fa-trash-alt"></i> Limpar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="avatar-container">
+                    <div class="loading-animation" id="loading-animation">
+                        <div class="spinner"></div>
+                        <p>Processando tradução...</p>
+                    </div>
+                    <video id="libras-avatar" class="avatar-player" controls style="display:none;"></video>
+                    <canvas id="custom-avatar" class="avatar-canvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="learn" class="features-section">
+            <h2 class="section-title">Nossos Recursos</h2>
+            <p class="section-subtitle">Conheça as funcionalidades que tornam o Sinais de Vida único</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Tradutor Inteligente</h3>
+                    <p>Tradução automática de texto e voz para Libras com nosso avatar 3D de alta qualidade.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Aprendizado Interativo</h3>
+                    <p>Cursos gamificados para aprender Libras de forma divertida e eficiente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Biblioteca de Sinais</h3>
+                    <p>Dicionário completo com milhares de sinais organizados por categorias.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Acessibilidade Total</h3>
+                    <p>Plataforma desenvolvida seguindo todos os padrões de acessibilidade digital.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title">Sobre o Sinais de Vida</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Sinais de Vida nasceu da necessidade de promover inclusão social através da tecnologia. Nossa missão é quebrar barreiras de comunicação e conectar pessoas.</p>
+                    <p>Utilizamos tecnologia de ponta combinada com conhecimento especializado em Libras para oferecer a melhor experiência de tradução.</p>
+                    <a href="#contact" class="btn btn-outline">Fale conosco</a>
+                </div>
+                <div class="about-image">
+                    <!--<img src="assets/images/about-image.jpg" alt="Equipe Sinais de Vida"> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-hands"></i>
+                    <h3>Sinais de <span>Vida</span></h3>
+                </div>
+                <p>Promovendo inclusão e conectando pessoas através da Língua Brasileira de Sinais.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#translator">Tradutor</a></li>
+                    <li><a href="#learn">Aprender Libras</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@sinaisdevida.com.br</li>
+                    <li><i class="fas fa-phone"></i> (11) 94002-8922</li>
+                    <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sinais de Vida. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
