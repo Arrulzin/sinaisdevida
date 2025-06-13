@@ -8,148 +8,154 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
-            <i class="fas fa-hands"></i>
+            <i class="fas fa-hands" aria-hidden="true"></i>
             <h1>Sinais de <span>Vida</span></h1>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#translator" class="nav-link">Tradutor</a></li>
-                <li><a href="#learn" class="nav-link">Aprender</a></li>
-                <li><a href="#about" class="nav-link">Sobre</a></li>
-                <li><a href="#contact" class="nav-link">Contato</a></li>
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <ul role="menubar">
+                <li role="none"><a href="#translator" class="nav-link" role="menuitem">Tradutor</a></li>
+                <li role="none"><a href="#learn" class="nav-link" role="menuitem">Aprender</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">Sobre</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contato</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-content">
-            <h2 class="hero-title">Conectando mundos através da Libras</h2>
+            <h2 class="hero-title" id="hero-heading">Conectando mundos através da Libras</h2>
             <p class="hero-text">Sinais de Vida é uma plataforma inovadora que traduz conteúdo em português para Língua Brasileira de Sinais, promovendo inclusão e acessibilidade.</p>
-            <a href="#translator" class="btn btn-primary">Experimente agora</a>
+            <a href="#translator" class="btn btn-primary" role="button">Experimente agora</a>
         </div>
         <div class="hero-image">
-            <!--<img src="assets/images/hero-image.png" alt="Pessoas se comunicando em Libras">-->
+            <!-- <img src="assets/images/hero-image.png" alt="Pessoas se comunicando em Libras"> -->
         </div>
     </section>
 
-    <main class="main-content">
-        <section id="translator" class="translator-section">
-            <h2 class="section-title">Tradutor para Libras</h2>
+    <main class="main-content" role="main">
+        <section id="translator" class="translator-section" aria-labelledby="translator-heading">
+            <h2 class="section-title" id="translator-heading">Tradutor para Libras</h2>
             <p class="section-subtitle">Digite ou fale o texto que deseja traduzir para Libras</p>
             
-            <div class="translator-container">
+            <div class="translator-container" role="region" aria-labelledby="translator-heading">
                 <div class="input-area">
-                    <textarea id="text-to-translate" placeholder="Digite aqui o texto que deseja traduzir para Libras..." class="translation-input"></textarea>
-                    <div class="controls">
-                        <button id="translate-btn" class="btn btn-translate">
-                            <i class="fas fa-hands"></i> Traduzir
+                    <textarea id="text-to-translate" 
+                              placeholder="Digite aqui o texto que deseja traduzir para Libras..." 
+                              class="translation-input"
+                              aria-label="Texto para tradução"
+                              aria-describedby="translation-help"></textarea>
+                    <p id="translation-help" class="sr-only">Digite o texto que deseja traduzir para Língua Brasileira de Sinais</p>
+                    
+                    <div class="controls" role="toolbar" aria-label="Controles do tradutor">
+                        <button id="translate-btn" class="btn btn-translate" aria-label="Traduzir texto" aria-disabled="true">
+                            <i class="fas fa-hands" aria-hidden="true"></i> Traduzir
                         </button>
-                        <button id="voice-btn" class="btn btn-voice">
-                            <i class="fas fa-microphone"></i> Falar
+                        <button id="voice-btn" class="btn btn-voice" aria-label="Ativar reconhecimento de voz">
+                            <i class="fas fa-microphone" aria-hidden="true"></i> Falar
                         </button>
-                        <button id="clear-btn" class="btn btn-clear">
-                            <i class="fas fa-trash-alt"></i> Limpar
+                        <button id="clear-btn" class="btn btn-clear" aria-label="Limpar texto">
+                            <i class="fas fa-trash-alt" aria-hidden="true"></i> Limpar
                         </button>
                     </div>
                 </div>
                 
-                <div class="avatar-container">
-                    <div class="loading-animation" id="loading-animation">
-                        <div class="spinner"></div>
+                <div class="avatar-container" role="region" aria-live="polite" aria-label="Resultado da tradução">
+                    <div class="loading-animation" id="loading-animation" aria-busy="true" aria-hidden="true">
+                        <div class="spinner" aria-hidden="true"></div>
                         <p>Processando tradução...</p>
                     </div>
-                    <video id="libras-avatar" class="avatar-player" controls style="display:none;"></video>
-                    <canvas id="custom-avatar" class="avatar-canvas" width="400" height="400"></canvas>
+                    <video id="libras-avatar" class="avatar-player" controls style="display:none;" aria-label="Tradução em LIBRAS"></video>
+                    <canvas id="custom-avatar" class="avatar-canvas" width="400" height="400" aria-label="Avatar 3D"></canvas>
                 </div>
             </div>
         </section>
 
-        <section id="learn" class="features-section">
-            <h2 class="section-title">Nossos Recursos</h2>
+        <section id="learn" class="features-section" aria-labelledby="features-heading">
+            <h2 class="section-title" id="features-heading">Nossos Recursos</h2>
             <p class="section-subtitle">Conheça as funcionalidades que tornam o Sinais de Vida único</p>
             
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" role="article" aria-labelledby="feature1">
+                    <div class="feature-icon" aria-hidden="true">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Tradutor Inteligente</h3>
+                    <h3 id="feature1">Tradutor Inteligente</h3>
                     <p>Tradução automática de texto e voz para Libras com nosso avatar 3D de alta qualidade.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" role="article" aria-labelledby="feature2">
+                    <div class="feature-icon" aria-hidden="true">
                         <i class="fas fa-gamepad"></i>
                     </div>
-                    <h3>Aprendizado Interativo</h3>
+                    <h3 id="feature2">Aprendizado Interativo</h3>
                     <p>Cursos gamificados para aprender Libras de forma divertida e eficiente.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" role="article" aria-labelledby="feature3">
+                    <div class="feature-icon" aria-hidden="true">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3>Biblioteca de Sinais</h3>
+                    <h3 id="feature3">Biblioteca de Sinais</h3>
                     <p>Dicionário completo com milhares de sinais organizados por categorias.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" role="article" aria-labelledby="feature4">
+                    <div class="feature-icon" aria-hidden="true">
                         <i class="fas fa-universal-access"></i>
                     </div>
-                    <h3>Acessibilidade Total</h3>
+                    <h3 id="feature4">Acessibilidade Total</h3>
                     <p>Plataforma desenvolvida seguindo todos os padrões de acessibilidade digital.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <h2 class="section-title">Sobre o Sinais de Vida</h2>
+        <section id="about" class="about-section" aria-labelledby="about-heading">
+            <h2 class="section-title" id="about-heading">Sobre o Sinais de Vida</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>O Sinais de Vida nasceu da necessidade de promover inclusão social através da tecnologia. Nossa missão é quebrar barreiras de comunicação e conectar pessoas.</p>
                     <p>Utilizamos tecnologia de ponta combinada com conhecimento especializado em Libras para oferecer a melhor experiência de tradução.</p>
-                    <a href="#contact" class="btn btn-outline">Fale conosco</a>
+                    <a href="#contact" class="btn btn-outline" role="button">Fale conosco</a>
                 </div>
                 <div class="about-image">
-                    <!--<img src="assets/images/about-image.jpg" alt="Equipe Sinais de Vida"> -->
+                    <!-- <img src="assets/images/about-image.jpg" alt="Equipe Sinais de Vida"> -->
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" id="contact">
+    <footer class="footer" id="contact" role="contentinfo">
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">
-                    <i class="fas fa-hands"></i>
+                    <i class="fas fa-hands" aria-hidden="true"></i>
                     <h3>Sinais de <span>Vida</span></h3>
                 </div>
                 <p>Promovendo inclusão e conectando pessoas através da Língua Brasileira de Sinais.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h4>Links Rápidos</h4>
-                <ul>
-                    <li><a href="#translator">Tradutor</a></li>
-                    <li><a href="#learn">Aprender Libras</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                <ul role="list">
+                    <li role="listitem"><a href="#translator">Tradutor</a></li>
+                    <li role="listitem"><a href="#learn">Aprender Libras</a></li>
+                    <li role="listitem"><a href="#about">Sobre Nós</a></li>
+                    <li role="listitem"><a href="#contact">Contato</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Contato</h4>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> contato@sinaisdevida.com.br</li>
-                    <li><i class="fas fa-phone"></i> (11) 94002-8922</li>
-                    <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+                <ul role="list">
+                    <li role="listitem"><i class="fas fa-envelope" aria-hidden="true"></i> contato@sinaisdevida.com.br</li>
+                    <li role="listitem"><i class="fas fa-phone" aria-hidden="true"></i> (11) 94002-8922</li>
+                    <li role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> São Paulo, Brasil</li>
                 </ul>
             </div>
         </div>
